@@ -23,6 +23,17 @@ class Testcalc(TestCase):
         self.assertEqual(app.subtract(self.x, self.y), 5)
         self.assertEqual(app.subtract(2,3), -1)
         
+    def test_multiply(self):
+        self.assertEqual(app.multiply(self.x, self.y), 50)
+        self.assertEqual(app.multiply(2,3), 6)
+
+    def test_devide(self):
+        self.assertEqual(app.devide(self.x, self.y), 2)
+        self.assertEqual(app.devide(5, 2), 2.5)
+        self.assertRaises(ValueError, app.devide, 10, 0)
+        with self.assertRaises(ValueError):
+           app.devide(10, 0)
+        
     
 
 if __name__ == '__main__':
