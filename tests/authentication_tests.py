@@ -25,8 +25,14 @@ class Testcalc(TestCase):
         
     def test_multiply(self):
         self.assertEqual(app.multiply(self.x, self.y), 50)
-        self.assertEqual(app.multiply(2,3), 6)         
+        self.assertEqual(app.multiply(2,3), 6)   
     
+    def test_devide(self):
+        self.assertEqual(app.devide(self.x, self.y), 2)
+        self.assertEqual(app.devide(5, 2), 2)
+        self.assertRaises(ValueError, app.devide, 10, 0)
+        with self.assertRaises(ValueError):
+           app.devide(10, 0)
 
 if __name__ == '__main__':
     unittest.main()
